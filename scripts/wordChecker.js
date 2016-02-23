@@ -1,24 +1,30 @@
 "use strict";
 
 // Word count should be less than 100.
-function checkWordCount(str) {
-	console.log("checkWordCount");
+function checkWordCount(testArray) {
+	if (testArray.length >= 100) {
+		// console.log("checkWordCount: >= 100");
+		return false;
+	} else {
+		// console.log("checkWordCount: < 100");
+		return true;
+	};
 }
 
 // No duplicate words allowed.
-function duplicateCheck(str) {
+function duplicateCheck(testArray) {
 	console.log("duplicateCheck");
 }
 
 // No special characters like $%^&* allowed.
-function verifyAlphaNumeric(str) {
+function verifyAlphaNumeric(TestStr) {
 	console.log("verifyAlphaNumeric");
 }
 
 function validateString() {
-	var testStr = document.getElementById("testInput").value;
-
-	if (checkWordCount(testStr) && duplicateCheck(testStr) && verifyAlphaNumeric(testStr)) {
+	var wordStr = document.getElementById("testInput").value;
+	var wordArray = wordStr.split(" ");
+	if (checkWordCount(wordArray) && duplicateCheck(wordArray) && verifyAlphaNumeric(wordStr)) {
 		alert("Test string is valid");
 	} else {
 		alert("Test string is invalid");
