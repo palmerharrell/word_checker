@@ -1,25 +1,30 @@
-// Now that the test suite exists, write a simple application to implement the functionality.
-
-// When the button is clicked, extract the contents of the textarea and validate it against 
-// the following rules.
-
-// There should only be alphanumeric characters in the text. No special characters 
-// like $%^&*.
-
-// No duplicate words allowed.
-// Word count should be less than 100.
-
 "use strict";
 
-function checkWordCount(testStr) {
+// Word count should be less than 100.
+function checkWordCount(str) {
 	console.log("checkWordCount");
 }
 
-function duplicateCheck(testStr) {
+// No duplicate words allowed.
+function duplicateCheck(str) {
 	console.log("duplicateCheck");
 }
 
-function verifyAlphaNumeric(testStr) {
+// No special characters like $%^&* allowed.
+function verifyAlphaNumeric(str) {
 	console.log("verifyAlphaNumeric");
 }
 
+function validateString() {
+	var testStr = document.getElementById("testInput").value;
+
+	if (checkWordCount(testStr) && duplicateCheck(testStr) && verifyAlphaNumeric(testStr)) {
+		alert("Test string is valid");
+	} else {
+		alert("Test string is invalid");
+	};
+}
+
+document.getElementById("testButton").addEventListener("click", function() {
+	validateString();
+});
