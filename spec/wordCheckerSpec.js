@@ -23,7 +23,7 @@ describe("Word Checker", function() {
   });
 
   it("verifyAlphaNumeric should return false if string has non-alphanumeric chars in it", function() {
-    expect(verifyAlphaNumeric("One of these 1s is not a word")).toBe(false);
+    expect(verifyAlphaNumeric("One of these things is non-alphanumeric")).toBe(false);
   });
 
 });

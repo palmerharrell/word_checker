@@ -24,14 +24,17 @@ function duplicateCheck(testStr) {
 	};
 }
 
-// No special characters like $%^&* allowed.
 function verifyAlphaNumeric(testStr) {
-	console.log("verifyAlphaNumeric");
+	var re = /[^a-zA-Z\d\s]/g;
+	if (re.test(testStr)) {
+		return false;
+	} else {
+		return true;
+	}
 }
 
 function validateString() {
 	var wordStr = document.getElementById("testInput").value;
-	// var wordArray = wordStr.split(" ").sort();
 	if (checkWordCount(wordStr) && duplicateCheck(wordStr) && verifyAlphaNumeric(wordStr)) {
 		alert("Test string is valid");
 	} else {
