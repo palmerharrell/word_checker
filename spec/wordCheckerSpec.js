@@ -15,7 +15,7 @@ describe("Word Checker", function() {
   });
 
   it("duplicateCheck should return false if string has duplicate words in it", function() {
-    expect(duplicateCheck("testing duplicates, testing")).toBe(false);
+    expect(duplicateCheck("testing duplicates testing")).toBe(false);
   });
 
   it("should have a verifyAlphaNumeric function", function() {
